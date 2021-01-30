@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаКоманда1" id="1">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.Команда1</CommandName>
+				<ExtendedTooltip name="ФормаКоманда1РасширеннаяПодсказка" id="2"/>
+			</Button>
+			<Button name="ФормаСоздатьБД" id="3">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.СоздатьБД</CommandName>
+				<ExtendedTooltip name="ФормаСоздатьБДРасширеннаяПодсказка" id="4"/>
+			</Button>
+			<Button name="ФормаСоздатьТаблицу" id="5">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.СоздатьТаблицу</CommandName>
+				<ExtendedTooltip name="ФормаСоздатьТаблицуРасширеннаяПодсказка" id="6"/>
+			</Button>
+			<Button name="ФормаТестЗапрос" id="7">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ТестЗапрос</CommandName>
+				<ExtendedTooltip name="ФормаТестЗапросРасширеннаяПодсказка" id="8"/>
+			</Button>
+			<Button name="ФормаВставитьДанныеВТаблицу" id="9">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ВставитьДанныеВТаблицу</CommandName>
+				<ExtendedTooltip name="ФормаВставитьДанныеВТаблицуРасширеннаяПодсказка" id="10"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Реквизит1" id="11">
+			<DataPath>Реквизит1</DataPath>
+			<ContextMenu name="Реквизит1КонтекстноеМеню" id="12"/>
+			<ExtendedTooltip name="Реквизит1РасширеннаяПодсказка" id="13"/>
+		</InputField>
+		<InputField name="Реквизит2" id="14">
+			<DataPath>Реквизит2</DataPath>
+			<ContextMenu name="Реквизит2КонтекстноеМеню" id="15"/>
+			<ExtendedTooltip name="Реквизит2РасширеннаяПодсказка" id="16"/>
+		</InputField>
+		<Pages name="Группа1" id="44">
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="45"/>
+			<ChildItems>
+				<Page name="сПараметрыПодключения" id="46">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Параметры подключения</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>С параметры подключения</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="сПараметрыПодключенияРасширеннаяПодсказка" id="47"/>
+					<ChildItems>
+						<UsualGroup name="ПараметрыПодключения" id="19">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Параметры подключения</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Параметры подключения</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ПараметрыПодключенияРасширеннаяПодсказка" id="20"/>
+							<ChildItems>
+								<InputField name="Адрес" id="21">
+									<DataPath>АдресСервера</DataPath>
+									<ContextMenu name="АдресКонтекстноеМеню" id="22"/>
+									<ExtendedTooltip name="АдресРасширеннаяПодсказка" id="23"/>
+								</InputField>
+								<InputField name="Порт" id="27">
+									<DataPath>Порт</DataPath>
+									<ContextMenu name="ПортКонтекстноеМеню" id="28"/>
+									<ExtendedTooltip name="ПортРасширеннаяПодсказка" id="29"/>
+								</InputField>
+								<InputField name="Логин" id="24">
+									<DataPath>Логин</DataPath>
+									<ContextMenu name="ЛогинКонтекстноеМеню" id="25"/>
+									<ExtendedTooltip name="ЛогинРасширеннаяПодсказка" id="26"/>
+								</InputField>
+								<InputField name="Пароль" id="33">
+									<DataPath>Пароль</DataPath>
+									<ContextMenu name="ПарольКонтекстноеМеню" id="34"/>
+									<ExtendedTooltip name="ПарольРасширеннаяПодсказка" id="35"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="помощь" id="36">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Помощь</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Помощь</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="помощьРасширеннаяПодсказка" id="37"/>
+							<ChildItems>
+								<InputField name="ИмяБД" id="38">
+									<DataPath>ИмяБД</DataPath>
+									<ContextMenu name="ИмяБДКонтекстноеМеню" id="39"/>
+									<ExtendedTooltip name="ИмяБДРасширеннаяПодсказка" id="40"/>
+								</InputField>
+								<InputField name="ОснТаблица" id="41">
+									<DataPath>ОснТаблица</DataPath>
+									<ContextMenu name="ОснТаблицаКонтекстноеМеню" id="42"/>
+									<ExtendedTooltip name="ОснТаблицаРасширеннаяПодсказка" id="43"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="сВыборкаДанных" id="48">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выборка данных</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>С выборка данных</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="сВыборкаДанныхРасширеннаяПодсказка" id="49"/>
+					<ChildItems>
+						<UsualGroup name="Группа2" id="58">
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="59"/>
+							<ChildItems>
+								<Button name="ШаблонЗапросаSelect" id="56">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ШаблонЗапросаSelect</CommandName>
+									<ExtendedTooltip name="ШаблонЗапросаSelectРасширеннаяПодсказка" id="57"/>
+								</Button>
+								<Button name="ФормаВыборкаДанных" id="17">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ВыборкаДанных</CommandName>
+									<ExtendedTooltip name="ФормаВыборкаДанныхРасширеннаяПодсказка" id="18"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="ФорматПринимаемыхДанных" id="53">
+							<DataPath>ФорматПринимаемыхДанных</DataPath>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ContextMenu name="ФорматПринимаемыхДанныхКонтекстноеМеню" id="54"/>
+							<ExtendedTooltip name="ФорматПринимаемыхДанныхРасширеннаяПодсказка" id="55"/>
+						</InputField>
+						<InputField name="ТекстЗапросаВыборки" id="50">
+							<DataPath>ТекстЗапросаВыборки</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Запрос</v8:content>
+								</v8:item>
+							</Title>
+							<MultiLine>true</MultiLine>
+							<ContextMenu name="ТекстЗапросаВыборкиКонтекстноеМеню" id="51"/>
+							<ExtendedTooltip name="ТекстЗапросаВыборкиРасширеннаяПодсказка" id="52"/>
+						</InputField>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.ОбработкаВзаимодействияClickHouse</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="Реквизит1" id="2">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Реквизит2" id="3">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресСервера" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес сервера</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Порт" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Порт</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Логин" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Логин</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Реквизит4" id="7">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Пароль" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пароль</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИмяБД" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Имя БД</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОснТаблица" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Осн таблица</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекстЗапросаВыборки" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текст запроса выборки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ФорматПринимаемыхДанных" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Формат принимаемых данных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>25</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Команда1" id="1">
+			<Action>Команда1</Action>
+		</Command>
+		<Command name="СоздатьБД" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать БД</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать БД</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьБД</Action>
+		</Command>
+		<Command name="СоздатьТаблицу" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать таблицу</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать таблицу</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьТаблицу</Action>
+		</Command>
+		<Command name="ТестЗапрос" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тест запрос</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тест запрос</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ТестЗапрос</Action>
+		</Command>
+		<Command name="ВставитьДанныеВТаблицу" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вставить данные в таблицу</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вставить данные в таблицу</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВставитьДанныеВТаблицу</Action>
+		</Command>
+		<Command name="ВыборкаДанных" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выборка данных</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выборка данных</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыборкаДанных</Action>
+		</Command>
+		<Command name="ШаблонЗапросаSelect" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шаблон запроса select</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шаблон запроса select</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ШаблонЗапросаSelect</Action>
+		</Command>
+	</Commands>
+</Form>

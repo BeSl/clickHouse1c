@@ -1,0 +1,12 @@
+﻿CREATE TABLE IF NOT EXISTS myDB.myTab (
+    event_date  Date,
+    event_time  DateTime,
+    ip          String,
+    city        String
+    ) 
+    engine=MergeTree(event_date, (event_date), 8122)
+    
+    
+    INSERT INTO myDB.myTab Values(toDate('20210120'), toDate('20210121'),'3s','03ww')
+    
+    INSERT INTO myDB.myTab Values('2021-01-10', '2021-01-21','3s','03ww')
