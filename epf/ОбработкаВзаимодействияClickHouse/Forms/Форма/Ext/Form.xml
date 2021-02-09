@@ -184,6 +184,7 @@
 									<ChildItems>
 										<InputField name="ИмяБД" id="106">
 											<DataPath>ИмяБД</DataPath>
+											<ListChoiceMode>true</ListChoiceMode>
 											<ContextMenu name="ИмяБДКонтекстноеМеню" id="107"/>
 											<ExtendedTooltip name="ИмяБДРасширеннаяПодсказка" id="108"/>
 										</InputField>
