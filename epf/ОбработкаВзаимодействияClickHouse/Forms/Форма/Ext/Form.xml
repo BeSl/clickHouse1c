@@ -105,18 +105,39 @@
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="59"/>
 									<ChildItems>
-										<InputField name="ТекущаяОперация" id="60">
-											<DataPath>ТекущаяОперация</DataPath>
-											<Title>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Операция</v8:content>
-												</v8:item>
-											</Title>
-											<ListChoiceMode>true</ListChoiceMode>
-											<ContextMenu name="ТекущаяОперацияКонтекстноеМеню" id="61"/>
-											<ExtendedTooltip name="ТекущаяОперацияРасширеннаяПодсказка" id="62"/>
-										</InputField>
+										<UsualGroup name="Группа7" id="117">
+											<Group>Horizontal</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Группа7РасширеннаяПодсказка" id="118"/>
+											<ChildItems>
+												<InputField name="ТекущаяОперация" id="60">
+													<DataPath>ТекущаяОперация</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Операция</v8:content>
+														</v8:item>
+													</Title>
+													<ListChoiceMode>true</ListChoiceMode>
+													<ContextMenu name="ТекущаяОперацияКонтекстноеМеню" id="61"/>
+													<ExtendedTooltip name="ТекущаяОперацияРасширеннаяПодсказка" id="62"/>
+													<Events>
+														<Event name="OnChange">ТекущаяОперацияПриИзменении</Event>
+													</Events>
+												</InputField>
+												<Button name="ВыполнитьЗапросКБД" id="115">
+													<Type>UsualButton</Type>
+													<Representation>Picture</Representation>
+													<CommandName>Form.Command.ВыполнитьЗапросКБД</CommandName>
+													<Picture>
+														<xr:Ref>StdPicture.GenerateReport</xr:Ref>
+														<xr:LoadTransparent>true</xr:LoadTransparent>
+													</Picture>
+													<ExtendedTooltip name="ВыполнитьЗапросКБДРасширеннаяПодсказка" id="116"/>
+												</Button>
+											</ChildItems>
+										</UsualGroup>
 										<UsualGroup name="ГруппаНастройкаВыборкиДанных" id="63">
 											<Title>
 												<v8:item>
@@ -195,67 +216,6 @@
 										</Button>
 									</ChildItems>
 								</UsualGroup>
-								<Table name="ТаблицыБД" id="90">
-									<Representation>List</Representation>
-									<AutoInsertNewRow>true</AutoInsertNewRow>
-									<EnableStartDrag>true</EnableStartDrag>
-									<EnableDrag>true</EnableDrag>
-									<DataPath>ТаблицыБД</DataPath>
-									<CommandSet>
-										<ExcludedCommand>Add</ExcludedCommand>
-										<ExcludedCommand>CancelSearch</ExcludedCommand>
-										<ExcludedCommand>Change</ExcludedCommand>
-										<ExcludedCommand>Copy</ExcludedCommand>
-										<ExcludedCommand>CopyToClipboard</ExcludedCommand>
-										<ExcludedCommand>Delete</ExcludedCommand>
-										<ExcludedCommand>EndEdit</ExcludedCommand>
-										<ExcludedCommand>Find</ExcludedCommand>
-										<ExcludedCommand>MoveDown</ExcludedCommand>
-										<ExcludedCommand>MoveUp</ExcludedCommand>
-										<ExcludedCommand>OutputList</ExcludedCommand>
-										<ExcludedCommand>SelectAll</ExcludedCommand>
-										<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
-										<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
-										<ExcludedCommand>SortListAsc</ExcludedCommand>
-										<ExcludedCommand>SortListDesc</ExcludedCommand>
-									</CommandSet>
-									<RowFilter xsi:nil="true"/>
-									<ContextMenu name="ТаблицыБДКонтекстноеМеню" id="91"/>
-									<AutoCommandBar name="ТаблицыБДКоманднаяПанель" id="92"/>
-									<ExtendedTooltip name="ТаблицыБДРасширеннаяПодсказка" id="93"/>
-									<SearchStringAddition name="ТаблицыБДСтрокаПоиска" id="94">
-										<AdditionSource>
-											<Item>ТаблицыБД</Item>
-											<Type>SearchStringRepresentation</Type>
-										</AdditionSource>
-										<ContextMenu name="ТаблицыБДСтрокаПоискаКонтекстноеМеню" id="95"/>
-										<ExtendedTooltip name="ТаблицыБДСтрокаПоискаРасширеннаяПодсказка" id="96"/>
-									</SearchStringAddition>
-									<ViewStatusAddition name="ТаблицыБДСостояниеПросмотра" id="97">
-										<AdditionSource>
-											<Item>ТаблицыБД</Item>
-											<Type>ViewStatusRepresentation</Type>
-										</AdditionSource>
-										<ContextMenu name="ТаблицыБДСостояниеПросмотраКонтекстноеМеню" id="98"/>
-										<ExtendedTooltip name="ТаблицыБДСостояниеПросмотраРасширеннаяПодсказка" id="99"/>
-									</ViewStatusAddition>
-									<SearchControlAddition name="ТаблицыБДУправлениеПоиском" id="100">
-										<AdditionSource>
-											<Item>ТаблицыБД</Item>
-											<Type>SearchControl</Type>
-										</AdditionSource>
-										<ContextMenu name="ТаблицыБДУправлениеПоискомКонтекстноеМеню" id="101"/>
-										<ExtendedTooltip name="ТаблицыБДУправлениеПоискомРасширеннаяПодсказка" id="102"/>
-									</SearchControlAddition>
-									<ChildItems>
-										<InputField name="ТаблицыБДИмяТаблицы" id="103">
-											<DataPath>ТаблицыБД.ИмяТаблицы</DataPath>
-											<EditMode>EnterOnInput</EditMode>
-											<ContextMenu name="ТаблицыБДИмяТаблицыКонтекстноеМеню" id="104"/>
-											<ExtendedTooltip name="ТаблицыБДИмяТаблицыРасширеннаяПодсказка" id="105"/>
-										</InputField>
-									</ChildItems>
-								</Table>
 								<Table name="СтруктураТаблицы" id="71">
 									<Representation>List</Representation>
 									<AutoInsertNewRow>true</AutoInsertNewRow>
@@ -550,6 +510,21 @@
 			</Picture>
 			<Action>ОбновитьСписокТаблиц</Action>
 			<Representation>Picture</Representation>
+		</Command>
+		<Command name="ВыполнитьЗапросКБД" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить запрос КБД</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить запрос КБД</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыполнитьЗапросКБД</Action>
 		</Command>
 	</Commands>
 </Form>
