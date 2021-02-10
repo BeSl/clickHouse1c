@@ -9,6 +9,209 @@
 		<Pages name="Группа1" id="44">
 			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="45"/>
 			<ChildItems>
+				<Page name="сВзаимодействие" id="48">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Запросы ClickHouse</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>С взаимодействие</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<ExtendedTooltip name="сВзаимодействиеРасширеннаяПодсказка" id="49"/>
+					<ChildItems>
+						<UsualGroup name="Группа5" id="109">
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа5РасширеннаяПодсказка" id="110"/>
+							<ChildItems>
+								<UsualGroup name="Группа6" id="111">
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Группа6РасширеннаяПодсказка" id="112"/>
+									<ChildItems>
+										<InputField name="ИмяБД" id="106">
+											<DataPath>ИмяБД</DataPath>
+											<ListChoiceMode>true</ListChoiceMode>
+											<ContextMenu name="ИмяБДКонтекстноеМеню" id="107"/>
+											<ExtendedTooltip name="ИмяБДРасширеннаяПодсказка" id="108"/>
+										</InputField>
+										<Button name="ОбновитьСписокТаблиц" id="113">
+											<Type>UsualButton</Type>
+											<CommandName>Form.Command.ОбновитьСписокТаблиц</CommandName>
+											<ExtendedTooltip name="ОбновитьСписокТаблицРасширеннаяПодсказка" id="114"/>
+										</Button>
+										<Button name="СписокТаблицТекущейБД" id="129">
+											<Type>UsualButton</Type>
+											<Representation>Picture</Representation>
+											<CommandName>Form.Command.СписокТаблицТекущейБД</CommandName>
+											<Picture>
+												<xr:Ref>StdPicture.NestedTable</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</Picture>
+											<ExtendedTooltip name="СписокТаблицТекущейБДРасширеннаяПодсказка" id="130"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="Группа7" id="117">
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Группа7РасширеннаяПодсказка" id="118"/>
+									<ChildItems>
+										<InputField name="ТекущаяОперация" id="60">
+											<DataPath>ТекущаяОперация</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Операция</v8:content>
+												</v8:item>
+											</Title>
+											<ListChoiceMode>true</ListChoiceMode>
+											<ContextMenu name="ТекущаяОперацияКонтекстноеМеню" id="61"/>
+											<ExtendedTooltip name="ТекущаяОперацияРасширеннаяПодсказка" id="62"/>
+											<Events>
+												<Event name="OnChange">ТекущаяОперацияПриИзменении</Event>
+											</Events>
+										</InputField>
+										<Button name="ВыполнитьЗапросКБД" id="115">
+											<Type>UsualButton</Type>
+											<Representation>Picture</Representation>
+											<CommandName>Form.Command.ВыполнитьЗапросКБД</CommandName>
+											<Picture>
+												<xr:Ref>StdPicture.GenerateReport</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</Picture>
+											<ExtendedTooltip name="ВыполнитьЗапросКБДРасширеннаяПодсказка" id="116"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+								<Table name="ТаблицыВыбраннойБД" id="131">
+									<Representation>List</Representation>
+									<Header>false</Header>
+									<HorizontalLines>false</HorizontalLines>
+									<VerticalLines>false</VerticalLines>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<DataPath>ТаблицыВыбраннойБД</DataPath>
+									<RowPictureDataPath>ТаблицыВыбраннойБД.Picture</RowPictureDataPath>
+									<ContextMenu name="ТаблицыВыбраннойБДКонтекстноеМеню" id="132"/>
+									<AutoCommandBar name="ТаблицыВыбраннойБДКоманднаяПанель" id="133"/>
+									<ExtendedTooltip name="ТаблицыВыбраннойБДРасширеннаяПодсказка" id="134"/>
+									<SearchStringAddition name="ТаблицыВыбраннойБДСтрокаПоиска" id="135">
+										<AdditionSource>
+											<Item>ТаблицыВыбраннойБД</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТаблицыВыбраннойБДСтрокаПоискаКонтекстноеМеню" id="136"/>
+										<ExtendedTooltip name="ТаблицыВыбраннойБДСтрокаПоискаРасширеннаяПодсказка" id="137"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ТаблицыВыбраннойБДСостояниеПросмотра" id="138">
+										<AdditionSource>
+											<Item>ТаблицыВыбраннойБД</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТаблицыВыбраннойБДСостояниеПросмотраКонтекстноеМеню" id="139"/>
+										<ExtendedTooltip name="ТаблицыВыбраннойБДСостояниеПросмотраРасширеннаяПодсказка" id="140"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ТаблицыВыбраннойБДУправлениеПоиском" id="141">
+										<AdditionSource>
+											<Item>ТаблицыВыбраннойБД</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ТаблицыВыбраннойБДУправлениеПоискомКонтекстноеМеню" id="142"/>
+										<ExtendedTooltip name="ТаблицыВыбраннойБДУправлениеПоискомРасширеннаяПодсказка" id="143"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<InputField name="ТаблицыВыбраннойБДЗначение" id="144">
+											<DataPath>ТаблицыВыбраннойБД.Value</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ТаблицыВыбраннойБДЗначениеКонтекстноеМеню" id="145"/>
+											<ExtendedTooltip name="ТаблицыВыбраннойБДЗначениеРасширеннаяПодсказка" id="146"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+								<InputField name="ТекстЗапросаВыборки" id="50">
+									<DataPath>ТекстЗапросаВыборки</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Запрос</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalStretch>true</HorizontalStretch>
+									<VerticalStretch>true</VerticalStretch>
+									<MultiLine>true</MultiLine>
+									<ContextMenu name="ТекстЗапросаВыборкиКонтекстноеМеню" id="51"/>
+									<ExtendedTooltip name="ТекстЗапросаВыборкиРасширеннаяПодсказка" id="52"/>
+								</InputField>
+								<UsualGroup name="Группа2" id="58">
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="59"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаНастройкаВыборкиДанных" id="63">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа настройка выборки данных</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа настройка выборки данных</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаНастройкаВыборкиДанныхРасширеннаяПодсказка" id="64"/>
+											<ChildItems>
+												<InputField name="ФорматПринимаемыхДанных" id="53">
+													<DataPath>ФорматПринимаемыхДанных</DataPath>
+													<ListChoiceMode>true</ListChoiceMode>
+													<ContextMenu name="ФорматПринимаемыхДанныхКонтекстноеМеню" id="54"/>
+													<ExtendedTooltip name="ФорматПринимаемыхДанныхРасширеннаяПодсказка" id="55"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаПодсказки" id="119">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа подсказки</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа подсказки</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаПодсказкиРасширеннаяПодсказка" id="120"/>
+											<ChildItems>
+												<InputField name="ВозможныеПараметрыЗапроса" id="121">
+													<DataPath>ВозможныеПараметрыЗапроса</DataPath>
+													<ListChoiceMode>true</ListChoiceMode>
+													<ContextMenu name="ВозможныеПараметрыЗапросаКонтекстноеМеню" id="122"/>
+													<ExtendedTooltip name="ВозможныеПараметрыЗапросаРасширеннаяПодсказка" id="123"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
 				<Page name="сПараметрыПодключения" id="46">
 					<Title>
 						<v8:item>
@@ -78,213 +281,19 @@
 						</UsualGroup>
 					</ChildItems>
 				</Page>
-				<Page name="сВзаимодействие" id="48">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Запросы ClickHouse</v8:content>
-						</v8:item>
-					</Title>
-					<ToolTip>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>С взаимодействие</v8:content>
-						</v8:item>
-					</ToolTip>
-					<Group>Horizontal</Group>
-					<ExtendedTooltip name="сВзаимодействиеРасширеннаяПодсказка" id="49"/>
+				<Page name="Группа8" id="124">
+					<Picture>
+						<xr:Ref>StdPicture.CalculationType</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ExtendedTooltip name="Группа8РасширеннаяПодсказка" id="125"/>
 					<ChildItems>
-						<UsualGroup name="Группа5" id="109">
-							<Representation>None</Representation>
-							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="Группа5РасширеннаяПодсказка" id="110"/>
-							<ChildItems>
-								<UsualGroup name="Группа2" id="58">
-									<Group>Vertical</Group>
-									<Representation>None</Representation>
-									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="59"/>
-									<ChildItems>
-										<UsualGroup name="Группа7" id="117">
-											<Group>Horizontal</Group>
-											<Representation>None</Representation>
-											<ShowTitle>false</ShowTitle>
-											<ExtendedTooltip name="Группа7РасширеннаяПодсказка" id="118"/>
-											<ChildItems>
-												<InputField name="ТекущаяОперация" id="60">
-													<DataPath>ТекущаяОперация</DataPath>
-													<Title>
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>Операция</v8:content>
-														</v8:item>
-													</Title>
-													<ListChoiceMode>true</ListChoiceMode>
-													<ContextMenu name="ТекущаяОперацияКонтекстноеМеню" id="61"/>
-													<ExtendedTooltip name="ТекущаяОперацияРасширеннаяПодсказка" id="62"/>
-													<Events>
-														<Event name="OnChange">ТекущаяОперацияПриИзменении</Event>
-													</Events>
-												</InputField>
-												<Button name="ВыполнитьЗапросКБД" id="115">
-													<Type>UsualButton</Type>
-													<Representation>Picture</Representation>
-													<CommandName>Form.Command.ВыполнитьЗапросКБД</CommandName>
-													<Picture>
-														<xr:Ref>StdPicture.GenerateReport</xr:Ref>
-														<xr:LoadTransparent>true</xr:LoadTransparent>
-													</Picture>
-													<ExtendedTooltip name="ВыполнитьЗапросКБДРасширеннаяПодсказка" id="116"/>
-												</Button>
-											</ChildItems>
-										</UsualGroup>
-										<UsualGroup name="ГруппаНастройкаВыборкиДанных" id="63">
-											<Title>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Группа настройка выборки данных</v8:content>
-												</v8:item>
-											</Title>
-											<ToolTip>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Группа настройка выборки данных</v8:content>
-												</v8:item>
-											</ToolTip>
-											<Representation>None</Representation>
-											<ShowTitle>false</ShowTitle>
-											<ExtendedTooltip name="ГруппаНастройкаВыборкиДанныхРасширеннаяПодсказка" id="64"/>
-											<ChildItems>
-												<InputField name="ФорматПринимаемыхДанных" id="53">
-													<DataPath>ФорматПринимаемыхДанных</DataPath>
-													<ListChoiceMode>true</ListChoiceMode>
-													<ContextMenu name="ФорматПринимаемыхДанныхКонтекстноеМеню" id="54"/>
-													<ExtendedTooltip name="ФорматПринимаемыхДанныхРасширеннаяПодсказка" id="55"/>
-												</InputField>
-											</ChildItems>
-										</UsualGroup>
-									</ChildItems>
-								</UsualGroup>
-								<InputField name="ТекстЗапросаВыборки" id="50">
-									<DataPath>ТекстЗапросаВыборки</DataPath>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Запрос</v8:content>
-										</v8:item>
-									</Title>
-									<HorizontalStretch>true</HorizontalStretch>
-									<VerticalStretch>true</VerticalStretch>
-									<MultiLine>true</MultiLine>
-									<ContextMenu name="ТекстЗапросаВыборкиКонтекстноеМеню" id="51"/>
-									<ExtendedTooltip name="ТекстЗапросаВыборкиРасширеннаяПодсказка" id="52"/>
-								</InputField>
-							</ChildItems>
-						</UsualGroup>
-						<UsualGroup name="ГруппаИнфоТаблицы" id="65">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Группа инфо таблицы</v8:content>
-								</v8:item>
-							</Title>
-							<ToolTip>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Группа инфо таблицы</v8:content>
-								</v8:item>
-							</ToolTip>
-							<Representation>None</Representation>
-							<ShowTitle>false</ShowTitle>
-							<ExtendedTooltip name="ГруппаИнфоТаблицыРасширеннаяПодсказка" id="66"/>
-							<ChildItems>
-								<UsualGroup name="Группа6" id="111">
-									<Representation>None</Representation>
-									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="Группа6РасширеннаяПодсказка" id="112"/>
-									<ChildItems>
-										<InputField name="ИмяБД" id="106">
-											<DataPath>ИмяБД</DataPath>
-											<ListChoiceMode>true</ListChoiceMode>
-											<ContextMenu name="ИмяБДКонтекстноеМеню" id="107"/>
-											<ExtendedTooltip name="ИмяБДРасширеннаяПодсказка" id="108"/>
-										</InputField>
-										<Button name="ОбновитьСписокТаблиц" id="113">
-											<Type>UsualButton</Type>
-											<CommandName>Form.Command.ОбновитьСписокТаблиц</CommandName>
-											<ExtendedTooltip name="ОбновитьСписокТаблицРасширеннаяПодсказка" id="114"/>
-										</Button>
-									</ChildItems>
-								</UsualGroup>
-								<Table name="СтруктураТаблицы" id="71">
-									<Representation>List</Representation>
-									<AutoInsertNewRow>true</AutoInsertNewRow>
-									<EnableStartDrag>true</EnableStartDrag>
-									<EnableDrag>true</EnableDrag>
-									<DataPath>СтруктураТаблицы</DataPath>
-									<CommandSet>
-										<ExcludedCommand>Add</ExcludedCommand>
-										<ExcludedCommand>CancelSearch</ExcludedCommand>
-										<ExcludedCommand>Change</ExcludedCommand>
-										<ExcludedCommand>Copy</ExcludedCommand>
-										<ExcludedCommand>CopyToClipboard</ExcludedCommand>
-										<ExcludedCommand>Delete</ExcludedCommand>
-										<ExcludedCommand>EndEdit</ExcludedCommand>
-										<ExcludedCommand>Find</ExcludedCommand>
-										<ExcludedCommand>MoveDown</ExcludedCommand>
-										<ExcludedCommand>MoveUp</ExcludedCommand>
-										<ExcludedCommand>OutputList</ExcludedCommand>
-										<ExcludedCommand>SelectAll</ExcludedCommand>
-										<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
-										<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
-										<ExcludedCommand>SortListAsc</ExcludedCommand>
-										<ExcludedCommand>SortListDesc</ExcludedCommand>
-									</CommandSet>
-									<RowFilter xsi:nil="true"/>
-									<ContextMenu name="СтруктураТаблицыКонтекстноеМеню" id="72"/>
-									<AutoCommandBar name="СтруктураТаблицыКоманднаяПанель" id="73"/>
-									<ExtendedTooltip name="СтруктураТаблицыРасширеннаяПодсказка" id="74"/>
-									<SearchStringAddition name="СтруктураТаблицыСтрокаПоиска" id="75">
-										<AdditionSource>
-											<Item>СтруктураТаблицы</Item>
-											<Type>SearchStringRepresentation</Type>
-										</AdditionSource>
-										<ContextMenu name="СтруктураТаблицыСтрокаПоискаКонтекстноеМеню" id="76"/>
-										<ExtendedTooltip name="СтруктураТаблицыСтрокаПоискаРасширеннаяПодсказка" id="77"/>
-									</SearchStringAddition>
-									<ViewStatusAddition name="СтруктураТаблицыСостояниеПросмотра" id="78">
-										<AdditionSource>
-											<Item>СтруктураТаблицы</Item>
-											<Type>ViewStatusRepresentation</Type>
-										</AdditionSource>
-										<ContextMenu name="СтруктураТаблицыСостояниеПросмотраКонтекстноеМеню" id="79"/>
-										<ExtendedTooltip name="СтруктураТаблицыСостояниеПросмотраРасширеннаяПодсказка" id="80"/>
-									</ViewStatusAddition>
-									<SearchControlAddition name="СтруктураТаблицыУправлениеПоиском" id="81">
-										<AdditionSource>
-											<Item>СтруктураТаблицы</Item>
-											<Type>SearchControl</Type>
-										</AdditionSource>
-										<ContextMenu name="СтруктураТаблицыУправлениеПоискомКонтекстноеМеню" id="82"/>
-										<ExtendedTooltip name="СтруктураТаблицыУправлениеПоискомРасширеннаяПодсказка" id="83"/>
-									</SearchControlAddition>
-									<ChildItems>
-										<InputField name="СтруктураТаблицыИмяКолонки" id="84">
-											<DataPath>СтруктураТаблицы.ИмяКолонки</DataPath>
-											<EditMode>EnterOnInput</EditMode>
-											<ContextMenu name="СтруктураТаблицыИмяКолонкиКонтекстноеМеню" id="85"/>
-											<ExtendedTooltip name="СтруктураТаблицыИмяКолонкиРасширеннаяПодсказка" id="86"/>
-										</InputField>
-										<InputField name="СтруктураТаблицыТипКолонки" id="87">
-											<DataPath>СтруктураТаблицы.ТипКолонки</DataPath>
-											<EditMode>EnterOnInput</EditMode>
-											<ContextMenu name="СтруктураТаблицыТипКолонкиКонтекстноеМеню" id="88"/>
-											<ExtendedTooltip name="СтруктураТаблицыТипКолонкиРасширеннаяПодсказка" id="89"/>
-										</InputField>
-									</ChildItems>
-								</Table>
-							</ChildItems>
-						</UsualGroup>
+						<SpreadSheetDocumentField name="докРезультатЗапроса" id="126">
+							<DataPath>докРезультатЗапроса</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ContextMenu name="докРезультатЗапросаКонтекстноеМеню" id="127"/>
+							<ExtendedTooltip name="докРезультатЗапросаРасширеннаяПодсказка" id="128"/>
+						</SpreadSheetDocumentField>
 					</ChildItems>
 				</Page>
 			</ChildItems>
@@ -489,6 +498,43 @@
 				</Column>
 			</Columns>
 		</Attribute>
+		<Attribute name="ВозможныеПараметрыЗапроса" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Возможные параметры запроса</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="докРезультатЗапроса" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Док результат запроса</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТаблицыВыбраннойБД" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблицы выбранной БД</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ОбновитьСписокТаблиц" id="1">
@@ -525,6 +571,21 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ВыполнитьЗапросКБД</Action>
+		</Command>
+		<Command name="СписокТаблицТекущейБД" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список таблиц текущей БД</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список таблиц текущей БД</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СписокТаблицТекущейБД</Action>
 		</Command>
 	</Commands>
 </Form>

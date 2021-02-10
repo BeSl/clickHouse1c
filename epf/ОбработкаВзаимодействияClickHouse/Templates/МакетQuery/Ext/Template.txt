@@ -10,3 +10,7 @@
     INSERT INTO myDB.myTab Values(toDate('20210120'), toDate('20210121'),'3s','03ww')
     
     INSERT INTO myDB.myTab Values('2021-01-10', '2021-01-21','3s','03ww')
+    
+    
+    SELECT event_time  , ip 
+FROM myDB.myTab FORMAT JSON
