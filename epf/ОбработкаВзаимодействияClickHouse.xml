@@ -25,6 +25,7 @@
 		</Properties>
 		<ChildObjects>
 			<Form>Форма</Form>
+			<Form>ФормаКонструкторSelect</Form>
 			<Template>dockerfile</Template>
 			<Template>МакетQuery</Template>
 			<Template>Макет</Template>

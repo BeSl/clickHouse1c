@@ -3,6 +3,7 @@
 	<CommandBarLocation>None</CommandBarLocation>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
@@ -57,7 +58,7 @@
 											</CommandSet>
 											<ContextMenu name="СтруктураБазСервераКонтекстноеМеню" id="148">
 												<ChildItems>
-													<Button name="СтруктураБазСервераИмяКонтекстноеМенюЗапросКТаблице" id="174">
+													<Button name="кмЗапросКТаблице" id="174">
 														<Type>CommandBarButton</Type>
 														<OnlyInAllActions>true</OnlyInAllActions>
 														<CommandName>Form.Command.ВыборкаДанных</CommandName>
@@ -65,25 +66,25 @@
 															<xr:Ref>StdPicture.RestoreValues</xr:Ref>
 															<xr:LoadTransparent>true</xr:LoadTransparent>
 														</Picture>
-														<ExtendedTooltip name="СтруктураБазСервераИмяКонтекстноеМенюЗапросКТаблицеРасширеннаяПодсказка" id="175"/>
+														<ExtendedTooltip name="кмЗапросКТаблицеРасширеннаяПодсказка" id="175"/>
 													</Button>
-													<Button name="СтруктураБазСервераКонтекстноеМенюСоздатьТаблицу" id="179">
+													<Button name="кмСоздатьТаблицу" id="179">
 														<Type>CommandBarButton</Type>
 														<CommandName>Form.Command.СоздатьТаблицу</CommandName>
 														<Picture>
 															<xr:Ref>StdPicture.QueryWizardCreateNestedQuery</xr:Ref>
 															<xr:LoadTransparent>true</xr:LoadTransparent>
 														</Picture>
-														<ExtendedTooltip name="СтруктураБазСервераКонтекстноеМенюСоздатьТаблицуРасширеннаяПодсказка" id="180"/>
+														<ExtendedTooltip name="кмСоздатьТаблицуРасширеннаяПодсказка" id="180"/>
 													</Button>
-													<Button name="СтруктураБазСервераКонтекстноеМенюСоздатьБазуДанных" id="181">
+													<Button name="кмСоздатьБазуДанных" id="181">
 														<Type>CommandBarButton</Type>
 														<CommandName>Form.Command.СоздатьБазуДанных</CommandName>
 														<Picture>
 															<xr:Ref>StdPicture.CreateListItem</xr:Ref>
 															<xr:LoadTransparent>true</xr:LoadTransparent>
 														</Picture>
-														<ExtendedTooltip name="СтруктураБазСервераКонтекстноеМенюСоздатьБазуДанныхРасширеннаяПодсказка" id="182"/>
+														<ExtendedTooltip name="кмСоздатьБазуДанныхРасширеннаяПодсказка" id="182"/>
 													</Button>
 												</ChildItems>
 											</ContextMenu>
@@ -121,6 +122,9 @@
 												<ContextMenu name="СтруктураБазСервераУправлениеПоискомКонтекстноеМеню" id="158"/>
 												<ExtendedTooltip name="СтруктураБазСервераУправлениеПоискомРасширеннаяПодсказка" id="159"/>
 											</SearchControlAddition>
+											<Events>
+												<Event name="OnActivateRow">СтруктураБазСервераПриАктивизацииСтроки</Event>
+											</Events>
 											<ChildItems>
 												<ColumnGroup name="СтруктураБазСервераГруппа1" id="172">
 													<Group>InCell</Group>
@@ -160,95 +164,38 @@
 									<ThroughAlign>DontUse</ThroughAlign>
 									<ExtendedTooltip name="Группа10РасширеннаяПодсказка" id="169"/>
 									<ChildItems>
-										<UsualGroup name="Группа2" id="58">
-											<Group>Vertical</Group>
-											<Representation>None</Representation>
-											<ShowTitle>false</ShowTitle>
-											<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="59"/>
-											<ChildItems>
-												<UsualGroup name="ГруппаНастройкаВыборкиДанных" id="63">
-													<Title>
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>Группа настройка выборки данных</v8:content>
-														</v8:item>
-													</Title>
-													<ToolTip>
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>Группа настройка выборки данных</v8:content>
-														</v8:item>
-													</ToolTip>
-													<Representation>None</Representation>
-													<ShowTitle>false</ShowTitle>
-													<ExtendedTooltip name="ГруппаНастройкаВыборкиДанныхРасширеннаяПодсказка" id="64"/>
-													<ChildItems>
-														<InputField name="ФорматПринимаемыхДанных" id="53">
-															<DataPath>ФорматПринимаемыхДанных</DataPath>
-															<ListChoiceMode>true</ListChoiceMode>
-															<ContextMenu name="ФорматПринимаемыхДанныхКонтекстноеМеню" id="54"/>
-															<ExtendedTooltip name="ФорматПринимаемыхДанныхРасширеннаяПодсказка" id="55"/>
-														</InputField>
-													</ChildItems>
-												</UsualGroup>
-												<UsualGroup name="ГруппаПодсказки" id="119">
-													<Title>
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>Группа подсказки</v8:content>
-														</v8:item>
-													</Title>
-													<ToolTip>
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>Группа подсказки</v8:content>
-														</v8:item>
-													</ToolTip>
-													<Representation>None</Representation>
-													<ShowTitle>false</ShowTitle>
-													<ExtendedTooltip name="ГруппаПодсказкиРасширеннаяПодсказка" id="120"/>
-													<ChildItems>
-														<InputField name="ВозможныеПараметрыЗапроса" id="121">
-															<DataPath>ВозможныеПараметрыЗапроса</DataPath>
-															<ListChoiceMode>true</ListChoiceMode>
-															<ContextMenu name="ВозможныеПараметрыЗапросаКонтекстноеМеню" id="122"/>
-															<ExtendedTooltip name="ВозможныеПараметрыЗапросаРасширеннаяПодсказка" id="123"/>
-														</InputField>
-													</ChildItems>
-												</UsualGroup>
-											</ChildItems>
-										</UsualGroup>
 										<UsualGroup name="Группа7" id="117">
-											<Group>Horizontal</Group>
+											<Group>Vertical</Group>
 											<Representation>None</Representation>
 											<ShowTitle>false</ShowTitle>
 											<ExtendedTooltip name="Группа7РасширеннаяПодсказка" id="118"/>
 											<ChildItems>
-												<InputField name="ТекущаяОперация" id="60">
-													<DataPath>ТекущаяОперация</DataPath>
-													<Title>
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>Операция</v8:content>
-														</v8:item>
-													</Title>
-													<ListChoiceMode>true</ListChoiceMode>
-													<ContextMenu name="ТекущаяОперацияКонтекстноеМеню" id="61"/>
-													<ExtendedTooltip name="ТекущаяОперацияРасширеннаяПодсказка" id="62"/>
-													<Events>
-														<Event name="OnChange">ТекущаяОперацияПриИзменении</Event>
-													</Events>
-												</InputField>
 												<Button name="ВыполнитьЗапросКБД" id="115">
 													<Type>UsualButton</Type>
-													<Representation>Picture</Representation>
+													<Representation>PictureAndText</Representation>
 													<CommandName>Form.Command.ВыполнитьЗапросКБД</CommandName>
 													<Picture>
 														<xr:Ref>StdPicture.GenerateReport</xr:Ref>
 														<xr:LoadTransparent>true</xr:LoadTransparent>
 													</Picture>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Выполнить запрос к БД</v8:content>
+														</v8:item>
+													</Title>
 													<ExtendedTooltip name="ВыполнитьЗапросКБДРасширеннаяПодсказка" id="116"/>
 												</Button>
+												<LabelDecoration name="ДекорацияКодСостояния" id="183">
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Код состояния</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ДекорацияКодСостоянияКонтекстноеМеню" id="184"/>
+													<ExtendedTooltip name="ДекорацияКодСостоянияРасширеннаяПодсказка" id="185"/>
+												</LabelDecoration>
 											</ChildItems>
 										</UsualGroup>
 										<InputField name="ТекстЗапросаВыборки" id="50">
@@ -456,36 +403,6 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ФорматПринимаемыхДанных" id="12">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Формат принимаемых данных</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>25</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="ТекущаяОперация" id="13">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Текущая операция</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
 		<Attribute name="СтруктураТаблицы" id="14">
 			<Title>
 				<v8:item>
@@ -528,21 +445,6 @@
 					</Type>
 				</Column>
 			</Columns>
-		</Attribute>
-		<Attribute name="ВозможныеПараметрыЗапроса" id="16">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Возможные параметры запроса</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
-			</Type>
 		</Attribute>
 		<Attribute name="докРезультатЗапроса" id="17">
 			<Title>
