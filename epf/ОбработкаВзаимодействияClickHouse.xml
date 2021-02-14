@@ -27,6 +27,7 @@
 			<Form>Форма</Form>
 			<Form>ФормаКонструкторSelect</Form>
 			<Form>ФормаСозданиеБД</Form>
+			<Form>ФормаCreateTable</Form>
 			<Template>dockerfile</Template>
 			<Template>МакетQuery</Template>
 			<Template>Макет</Template>

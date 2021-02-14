@@ -33,12 +33,16 @@
 							<ExtendedTooltip name="Группа5РасширеннаяПодсказка" id="110"/>
 							<ChildItems>
 								<UsualGroup name="Группа9" id="166">
+									<HorizontalStretch>false</HorizontalStretch>
+									<GroupHorizontalAlign>Left</GroupHorizontalAlign>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
 									<ExtendedTooltip name="Группа9РасширеннаяПодсказка" id="167"/>
 									<ChildItems>
 										<Table name="СтруктураБазСервера" id="147">
 											<Representation>Tree</Representation>
+											<Width>40</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
 											<AutoInsertNewRow>true</AutoInsertNewRow>
 											<EnableStartDrag>true</EnableStartDrag>
 											<EnableDrag>true</EnableDrag>
@@ -158,7 +162,11 @@
 									</ChildItems>
 								</UsualGroup>
 								<UsualGroup name="Группа10" id="168">
+									<HorizontalStretch>true</HorizontalStretch>
+									<VerticalStretch>true</VerticalStretch>
+									<GroupHorizontalAlign>Center</GroupHorizontalAlign>
 									<Group>Vertical</Group>
+									<HorizontalAlign>Right</HorizontalAlign>
 									<Representation>None</Representation>
 									<ShowTitle>false</ShowTitle>
 									<ThroughAlign>DontUse</ThroughAlign>
@@ -206,9 +214,12 @@
 													<v8:content>Запрос</v8:content>
 												</v8:item>
 											</Title>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<AutoMaxHeight>false</AutoMaxHeight>
 											<HorizontalStretch>true</HorizontalStretch>
 											<VerticalStretch>true</VerticalStretch>
 											<MultiLine>true</MultiLine>
+											<ExtendedEdit>true</ExtendedEdit>
 											<ContextMenu name="ТекстЗапросаВыборкиКонтекстноеМеню" id="51"/>
 											<ExtendedTooltip name="ТекстЗапросаВыборкиРасширеннаяПодсказка" id="52"/>
 										</InputField>
@@ -489,7 +500,7 @@
 					<Type>
 						<v8:Type>xs:string</v8:Type>
 						<v8:StringQualifiers>
-							<v8:Length>0</v8:Length>
+							<v8:Length>100</v8:Length>
 							<v8:AllowedLength>Variable</v8:AllowedLength>
 						</v8:StringQualifiers>
 					</Type>
@@ -515,7 +526,7 @@
 					<Type>
 						<v8:Type>xs:string</v8:Type>
 						<v8:StringQualifiers>
-							<v8:Length>0</v8:Length>
+							<v8:Length>25</v8:Length>
 							<v8:AllowedLength>Variable</v8:AllowedLength>
 						</v8:StringQualifiers>
 					</Type>

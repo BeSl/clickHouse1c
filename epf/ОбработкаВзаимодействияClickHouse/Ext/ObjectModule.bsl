@@ -15,10 +15,13 @@
 	"INSERT  INTO %ИмяБД%.%ИмяТаблицы% VALUES(%ЗначенияВставки%");
 	
 	ОперацииБД.Вставить("Создать таблицу", 
-	"CREATE TABLE %ИмяБД%.%ИмяТаблицы% (%КолонкиТипыТаблицы%)");
+	"CREATE TABLE [IF NOT EXISTS] [dbName].[table_name] [ON CLUSTER]
+	|(
+	|	[COLUMS]
+	|) ENGINE = engine");
 	
 	ОперацииБД.Вставить("Создать Базу Данных", 
-	"CREATE DATABASE [IF NOT EXISTS] db_name [ON CLUSTER cluster]
+	"CREATE DATABASE [IF NOT EXISTS] [dbName] [ON CLUSTER]
 	|[ENGINE]");
 
 	Возврат ОперацииБД;
