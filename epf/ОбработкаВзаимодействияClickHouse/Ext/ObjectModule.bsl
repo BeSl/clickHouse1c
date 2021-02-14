@@ -18,8 +18,9 @@
 	"CREATE TABLE %ИмяБД%.%ИмяТаблицы% (%КолонкиТипыТаблицы%)");
 	
 	ОперацииБД.Вставить("Создать Базу Данных", 
-	"CREATE DATABASE %ИмяБД% [ENGINE = %ТипБазы%]");
-	
+	"CREATE DATABASE [IF NOT EXISTS] db_name [ON CLUSTER cluster]
+	|[ENGINE]");
+
 	Возврат ОперацииБД;
 	
 КонецФункции
@@ -81,8 +82,10 @@
 Функция ДвижкиБазДанных() Экспорт
 	
 	Движки = Новый Соответствие;
-	Движки.Вставить("%ТипБазы% - MySQL", "'host:port', ['database' | database], 'user', 'password'");
-	Движки.Вставить("%ТипБазы% - Lazy","%expiration_time_in_seconds%");
+	Движки.Вставить("MySQL", "'host:port', ['database' | database], 'user', 'password'");
+	Движки.Вставить("Lazy","'expiration_time_in_seconds'");
+	Движки.Вставить("Atomic", "");
+	Движки.Вставить("MaterializeMySQL", "'host:port', ['database' | database], 'user', 'password'");
 	
 	Возврат Движки;
 	
