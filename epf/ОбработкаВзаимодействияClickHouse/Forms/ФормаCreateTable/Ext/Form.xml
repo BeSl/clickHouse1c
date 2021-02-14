@@ -1,6 +1,18 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5">
-	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаСгенерироватьЗапрос" id="42">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.СгенерироватьЗапрос</CommandName>
+				<ExtendedTooltip name="ФормаСгенерироватьЗапросРасширеннаяПодсказка" id="43"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
 	<ChildItems>
 		<CheckBoxField name="IF_NOT_EXISTS" id="1">
 			<DataPath>IF_NOT_EXISTS</DataPath>
@@ -68,6 +80,7 @@
 				<InputField name="СоставТаблицыТипКолонки" id="26">
 					<DataPath>СоставТаблицы.ТипКолонки</DataPath>
 					<EditMode>EnterOnInput</EditMode>
+					<ListChoiceMode>true</ListChoiceMode>
 					<ContextMenu name="СоставТаблицыТипКолонкиКонтекстноеМеню" id="27"/>
 					<ExtendedTooltip name="СоставТаблицыТипКолонкиРасширеннаяПодсказка" id="28"/>
 				</InputField>
@@ -80,11 +93,38 @@
 				</CheckBoxField>
 			</ChildItems>
 		</Table>
-		<InputField name="ENGINE" id="29">
-			<DataPath>ENGINE</DataPath>
-			<ListChoiceMode>true</ListChoiceMode>
-			<ContextMenu name="ENGINEКонтекстноеМеню" id="30"/>
-			<ExtendedTooltip name="ENGINEРасширеннаяПодсказка" id="31"/>
+		<UsualGroup name="Группа1" id="37">
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="38"/>
+			<ChildItems>
+				<InputField name="ENGINE" id="29">
+					<DataPath>ENGINE</DataPath>
+					<TitleFont ref="style:NormalTextFont" height="0" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ContextMenu name="ENGINEКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ENGINEРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<Button name="СписокДвижковТаблиц" id="35">
+					<Type>UsualButton</Type>
+					<Representation>Picture</Representation>
+					<CommandName>Form.Command.СписокДвижковТаблиц</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Заполнить список движков</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СписокДвижковТаблицРасширеннаяПодсказка" id="36"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="SETTINGS" id="39">
+			<DataPath>SETTINGS</DataPath>
+			<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<MultiLine>true</MultiLine>
+			<ContextMenu name="SETTINGSКонтекстноеМеню" id="40"/>
+			<ExtendedTooltip name="SETTINGSРасширеннаяПодсказка" id="41"/>
 		</InputField>
 	</ChildItems>
 	<Attributes>
@@ -219,5 +259,65 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
+		<Attribute name="ПараметрыПодключения" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры подключения</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="SETTINGS" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>SETTINGS</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
+	<Commands>
+		<Command name="СгенерироватьЗапрос" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сгенерировать запрос</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сгенерировать запрос</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СгенерироватьЗапрос</Action>
+		</Command>
+		<Command name="СписокДвижковТаблиц" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список движков таблиц</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список движков таблиц</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.ActiveUsers</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СписокДвижковТаблиц</Action>
+		</Command>
+	</Commands>
 </Form>

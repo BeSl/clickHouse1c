@@ -18,7 +18,7 @@
 	"CREATE TABLE [IF NOT EXISTS] [dbName].[table_name] [ON CLUSTER]
 	|(
 	|	[COLUMS]
-	|) ENGINE = engine");
+	|) [ENGINE]");
 	
 	ОперацииБД.Вставить("Создать Базу Данных", 
 	"CREATE DATABASE [IF NOT EXISTS] [dbName] [ON CLUSTER]
@@ -94,6 +94,46 @@
 	
 КонецФункции
 
+Функция ПараметрыДвижковТаблиц() Экспорт
+	
+	ПараметрыДвижков = Новый Соответствие;
+	ПараметрыДвижков.Вставить("MergeTree", "");
+	ПараметрыДвижков.Вставить("SummingMergeTree", "[columns]");
+	ПараметрыДвижков.Вставить("AggregatingMergeTree", "");
+	ПараметрыДвижков.Вставить("Kafka", "SETTINGS
+    |kafka_broker_list = 'host:port',
+    |kafka_topic_list = 'topic1,topic2,...',
+    |kafka_group_name = 'group_name',
+    |kafka_format = 'data_format'[,]
+    |[kafka_row_delimiter = 'delimiter_symbol',]
+    |[kafka_schema = '',]
+    |[kafka_num_consumers = N,]
+    |[kafka_max_block_size = 0,]
+    |[kafka_skip_broken_messages = N,]
+    |[kafka_commit_every_batch = 0,]
+    |[kafka_thread_per_consumer = 0]");
+	
+	ПараметрыДвижков.Вставить("RabbitMQ ", "SETTINGS
+    |rabbitmq_host_port = 'host:port',
+    |rabbitmq_exchange_name = 'exchange_name',
+    |rabbitmq_format = 'data_format'[,]
+    |[rabbitmq_exchange_type = 'exchange_type',]
+    |[rabbitmq_routing_key_list = 'key1,key2,...',]
+    |[rabbitmq_row_delimiter = 'delimiter_symbol',]
+    |[rabbitmq_schema = '',]
+    |[rabbitmq_num_consumers = N,]
+    |[rabbitmq_num_queues = N,]
+    |[rabbitmq_queue_base = 'queue',]
+    |[rabbitmq_deadletter_exchange = 'dl-exchange',]
+    |[rabbitmq_persistent = 0,]
+    |[rabbitmq_skip_broken_messages = N,]
+    |[rabbitmq_max_block_size = N,]
+    |[rabbitmq_flush_interval_ms = N]");
+	//ПараметрыДвижков.Вставить("", "");
+	Возврат ПараметрыДвижков;
+	
+КонецФункции
+
 Функция ИнформацияПоВсемБазамСУБД(ПараметрыПодключения) Экспорт
 	
 	ТекстЗапроса = "Select * FROM system.columns FORMAT JSON";
@@ -123,6 +163,8 @@
 
 #Область СправочнаяИнформацияПодсказки
 Функция ВстроенныеТипыClickHouse() Экспорт
+	
+	возврат ТипыДанныхДляСтолбцовТаблиц();	
 	
 КонецФункции
 #КонецОбласти
@@ -184,6 +226,29 @@
 	
 КонецФункции
 
+Функция ДвижкиТаблиц(ПараметрыПодключения) Экспорт
+	
+	ТекстЗапроса = "SELECT * FROM system.table_engines FORMAT JSON";
+	Результат = Запрос_CH(ПараметрыПодключения, ТекстЗапроса, "post");
+	
+	Если Результат.КодСостояния <> 200 Тогда
+		Возврат Новый СписокЗначений;
+	КонецЕсли;
+	
+	ЧтениеJson = Новый ЧтениеJSON;
+	ЧтениеJson.УстановитьСтроку(Результат.ТелоОтвета);
+	ОтветСтруктурой = ПрочитатьJSON(ЧтениеJson);
+	
+	ДвижкиТаблиц = Новый Массив;
+	
+	Для каждого АФункция из ОтветСтруктурой.data Цикл
+		ДвижкиТаблиц.Добавить(АФункция.name);
+	КонецЦикла;
+	
+	возврат ДвижкиТаблиц;
+	
+	
+КонецФункции
 #КонецОбласти
 
 #Область ОбработчикиСобытий
@@ -267,8 +332,6 @@
 	Возврат HTTPОтветВнБД;
 	
 КонецФункции
-
-
 
 #КонецОбласти
 
