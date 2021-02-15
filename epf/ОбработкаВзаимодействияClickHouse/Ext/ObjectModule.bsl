@@ -12,13 +12,14 @@
 	|[FORMAT]");
 	
 	ОперацииБД.Вставить("Вставка данных", 
-	"INSERT  INTO %ИмяБД%.%ИмяТаблицы% VALUES(%ЗначенияВставки%");
+	"INSERT INTO [db].[table] ([COLUMS]) VALUES ([VALUES])");
 	
 	ОперацииБД.Вставить("Создать таблицу", 
 	"CREATE TABLE [IF NOT EXISTS] [dbName].[table_name] [ON CLUSTER]
 	|(
 	|	[COLUMS]
-	|) [ENGINE]");
+	|) [ENGINE]
+	|[PRIMARY KEY]");
 	
 	ОперацииБД.Вставить("Создать Базу Данных", 
 	"CREATE DATABASE [IF NOT EXISTS] [dbName] [ON CLUSTER]

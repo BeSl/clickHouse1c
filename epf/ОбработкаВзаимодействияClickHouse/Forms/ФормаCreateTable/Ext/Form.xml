@@ -36,6 +36,11 @@
 			<ContextMenu name="table_NameКонтекстноеМеню" id="8"/>
 			<ExtendedTooltip name="table_NameРасширеннаяПодсказка" id="9"/>
 		</InputField>
+		<InputField name="ClusterName" id="44">
+			<DataPath>ClusterName</DataPath>
+			<ContextMenu name="ClusterNameКонтекстноеМеню" id="45"/>
+			<ExtendedTooltip name="ClusterNameРасширеннаяПодсказка" id="46"/>
+		</InputField>
 		<Table name="СоставТаблицы" id="10">
 			<Representation>List</Representation>
 			<AutoInsertNewRow>true</AutoInsertNewRow>
@@ -273,6 +278,21 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>SETTINGS</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ClusterName" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Cluster name</v8:content>
 				</v8:item>
 			</Title>
 			<Type>

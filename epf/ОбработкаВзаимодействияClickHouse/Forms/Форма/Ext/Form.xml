@@ -81,6 +81,15 @@
 														</Picture>
 														<ExtendedTooltip name="кмСоздатьТаблицуРасширеннаяПодсказка" id="180"/>
 													</Button>
+													<Button name="кмВставкаДанных" id="186">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.ВставкаДанных</CommandName>
+														<Picture>
+															<xr:Ref>StdPicture.DataCompositionNewGroup</xr:Ref>
+															<xr:LoadTransparent>true</xr:LoadTransparent>
+														</Picture>
+														<ExtendedTooltip name="кмВставкаДанныхРасширеннаяПодсказка" id="187"/>
+													</Button>
 													<Button name="кмСоздатьБазуДанных" id="181">
 														<Type>CommandBarButton</Type>
 														<CommandName>Form.Command.СоздатьБазуДанных</CommandName>
@@ -613,6 +622,21 @@
 				</v8:item>
 			</ToolTip>
 			<Action>СоздатьБазуДанных</Action>
+		</Command>
+		<Command name="ВставкаДанных" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вставка данных</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вставка данных</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВставкаДанных</Action>
 		</Command>
 	</Commands>
 </Form>
