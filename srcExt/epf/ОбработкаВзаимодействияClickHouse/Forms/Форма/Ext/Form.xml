@@ -9,6 +9,119 @@
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
+		<UsualGroup name="ГруппаПараметрыПодключения" id="188">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры подключения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа параметры подключения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ExtendedTooltip name="ГруппаПараметрыПодключенияРасширеннаяПодсказка" id="189"/>
+			<ChildItems>
+				<UsualGroup name="Группа3" id="67">
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="68"/>
+					<ChildItems>
+						<InputField name="Адрес" id="21">
+							<DataPath>прм_АдресСервера</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Адрес</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="АдресКонтекстноеМеню" id="22"/>
+							<ExtendedTooltip name="АдресРасширеннаяПодсказка" id="23"/>
+						</InputField>
+						<InputField name="Порт" id="27">
+							<DataPath>прм_Порт</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Порт</v8:content>
+								</v8:item>
+							</Title>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧГ=0</v8:content>
+								</v8:item>
+							</EditFormat>
+							<ChooseType>false</ChooseType>
+							<ContextMenu name="ПортКонтекстноеМеню" id="28"/>
+							<ExtendedTooltip name="ПортРасширеннаяПодсказка" id="29"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Группа4" id="69">
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа4РасширеннаяПодсказка" id="70"/>
+					<ChildItems>
+						<InputField name="Логин" id="24">
+							<DataPath>прм_Логин</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Логин</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ЛогинКонтекстноеМеню" id="25"/>
+							<ExtendedTooltip name="ЛогинРасширеннаяПодсказка" id="26"/>
+						</InputField>
+						<UsualGroup name="Группа2" id="190">
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="191"/>
+							<ChildItems>
+								<InputField name="Пароль" id="33">
+									<DataPath>прм_Пароль</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Пароль</v8:content>
+										</v8:item>
+									</Title>
+									<PasswordMode>true</PasswordMode>
+									<MultiLine>false</MultiLine>
+									<ExtendedEdit>false</ExtendedEdit>
+									<DropListButton>false</DropListButton>
+									<ChoiceButton>false</ChoiceButton>
+									<ClearButton>false</ClearButton>
+									<SpinButton>false</SpinButton>
+									<OpenButton>false</OpenButton>
+									<CreateButton>false</CreateButton>
+									<ChooseType>false</ChooseType>
+									<ContextMenu name="ПарольКонтекстноеМеню" id="34"/>
+									<ExtendedTooltip name="ПарольРасширеннаяПодсказка" id="35"/>
+								</InputField>
+								<Button name="ПоказатьПароль" id="192">
+									<Type>UsualButton</Type>
+									<Representation>Picture</Representation>
+									<CommandName>Form.Command.ПоказатьПароль</CommandName>
+									<Picture>
+										<xr:Ref>StdPicture.ShowData</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ExtendedTooltip name="ПоказатьПарольРасширеннаяПодсказка" id="193"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
 		<Pages name="Группа1" id="44">
 			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="45"/>
 			<ChildItems>
@@ -16,7 +129,7 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Запросы ClickHouse</v8:content>
+							<v8:content>Таблицы сервера</v8:content>
 						</v8:item>
 					</Title>
 					<ToolTip>
@@ -185,6 +298,23 @@
 									<ThroughAlign>DontUse</ThroughAlign>
 									<ExtendedTooltip name="Группа10РасширеннаяПодсказка" id="169"/>
 									<ChildItems>
+										<InputField name="ТекстЗапросаВыборки" id="50">
+											<DataPath>ТекстЗапросаВыборки</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Запрос</v8:content>
+												</v8:item>
+											</Title>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<AutoMaxHeight>false</AutoMaxHeight>
+											<HorizontalStretch>true</HorizontalStretch>
+											<VerticalStretch>true</VerticalStretch>
+											<MultiLine>true</MultiLine>
+											<ExtendedEdit>true</ExtendedEdit>
+											<ContextMenu name="ТекстЗапросаВыборкиКонтекстноеМеню" id="51"/>
+											<ExtendedTooltip name="ТекстЗапросаВыборкиРасширеннаяПодсказка" id="52"/>
+										</InputField>
 										<UsualGroup name="Группа7" id="117">
 											<Group>Vertical</Group>
 											<Representation>None</Representation>
@@ -219,23 +349,6 @@
 												</LabelDecoration>
 											</ChildItems>
 										</UsualGroup>
-										<InputField name="ТекстЗапросаВыборки" id="50">
-											<DataPath>ТекстЗапросаВыборки</DataPath>
-											<Title>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Запрос</v8:content>
-												</v8:item>
-											</Title>
-											<AutoMaxWidth>false</AutoMaxWidth>
-											<AutoMaxHeight>false</AutoMaxHeight>
-											<HorizontalStretch>true</HorizontalStretch>
-											<VerticalStretch>true</VerticalStretch>
-											<MultiLine>true</MultiLine>
-											<ExtendedEdit>true</ExtendedEdit>
-											<ContextMenu name="ТекстЗапросаВыборкиКонтекстноеМеню" id="51"/>
-											<ExtendedTooltip name="ТекстЗапросаВыборкиРасширеннаяПодсказка" id="52"/>
-										</InputField>
 									</ChildItems>
 								</UsualGroup>
 							</ChildItems>
@@ -272,46 +385,16 @@
 							</ToolTip>
 							<Group>Vertical</Group>
 							<ExtendedTooltip name="ПараметрыПодключенияРасширеннаяПодсказка" id="20"/>
-							<ChildItems>
-								<UsualGroup name="Группа3" id="67">
-									<Representation>None</Representation>
-									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="68"/>
-									<ChildItems>
-										<InputField name="Адрес" id="21">
-											<DataPath>АдресСервера</DataPath>
-											<ContextMenu name="АдресКонтекстноеМеню" id="22"/>
-											<ExtendedTooltip name="АдресРасширеннаяПодсказка" id="23"/>
-										</InputField>
-										<InputField name="Порт" id="27">
-											<DataPath>Порт</DataPath>
-											<ContextMenu name="ПортКонтекстноеМеню" id="28"/>
-											<ExtendedTooltip name="ПортРасширеннаяПодсказка" id="29"/>
-										</InputField>
-									</ChildItems>
-								</UsualGroup>
-								<UsualGroup name="Группа4" id="69">
-									<Representation>None</Representation>
-									<ShowTitle>false</ShowTitle>
-									<ExtendedTooltip name="Группа4РасширеннаяПодсказка" id="70"/>
-									<ChildItems>
-										<InputField name="Логин" id="24">
-											<DataPath>Логин</DataPath>
-											<ContextMenu name="ЛогинКонтекстноеМеню" id="25"/>
-											<ExtendedTooltip name="ЛогинРасширеннаяПодсказка" id="26"/>
-										</InputField>
-										<InputField name="Пароль" id="33">
-											<DataPath>Пароль</DataPath>
-											<ContextMenu name="ПарольКонтекстноеМеню" id="34"/>
-											<ExtendedTooltip name="ПарольРасширеннаяПодсказка" id="35"/>
-										</InputField>
-									</ChildItems>
-								</UsualGroup>
-							</ChildItems>
 						</UsualGroup>
 					</ChildItems>
 				</Page>
 				<Page name="Группа8" id="124">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Результат</v8:content>
+						</v8:item>
+					</Title>
 					<Picture>
 						<xr:Ref>StdPicture.CalculationType</xr:Ref>
 						<xr:LoadTransparent>true</xr:LoadTransparent>
@@ -336,11 +419,11 @@
 			</Type>
 			<MainAttribute>true</MainAttribute>
 		</Attribute>
-		<Attribute name="АдресСервера" id="4">
+		<Attribute name="прм_АдресСервера" id="4">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Адрес сервера</v8:content>
+					<v8:content>Прм адрес сервера</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -351,11 +434,11 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="Порт" id="5">
+		<Attribute name="прм_Порт" id="5">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Порт</v8:content>
+					<v8:content>Прм порт</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -367,11 +450,11 @@
 				</v8:NumberQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="Логин" id="6">
+		<Attribute name="прм_Логин" id="6">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Логин</v8:content>
+					<v8:content>Прм логин</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -382,11 +465,11 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="Пароль" id="8">
+		<Attribute name="прм_Пароль" id="8">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Пароль</v8:content>
+					<v8:content>Прм пароль</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -647,6 +730,21 @@
 			</ToolTip>
 			<Action>ВставкаДанных</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПоказатьПароль" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать пароль</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать пароль</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПоказатьПароль</Action>
 		</Command>
 	</Commands>
 </Form>
